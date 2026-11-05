@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>智能任务管理系统</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">智能任务管理</h1>
+      <p class="app__subtitle">记录任务、标注优先级、跟踪完成状态</p>
+    </header>
+
+    <form class="add-form" id="add-form" autocomplete="off">
+      <input
+        class="add-form__input"
+        id="task-title"
+        type="text"
+        maxlength="200"
+        placeholder="输入任务内容，例如：完成 Supabase 数据库建表"
+        required
+      />
+      <select class="add-form__select" id="task-priority">
+        <option value="高">高</option>
+        <option value="中" selected>中</option>
+        <option value="低">低</option>
+      </select>
+      <button class="add-form__submit" type="submit">添加任务</button>
+    </form>
+
+    <section class="filters" id="filters" aria-label="按优先级筛选">
+      <button class="filter is-active" data-priority="all" type="button">全部</button>
+      <button class="filter" data-priority="高" type="button">高</button>
+      <button class="filter" data-priority="中" type="button">中</button>
+      <button class="filter" data-priority="低" type="button">低</button>
+    </section>
+
+    <section class="list" id="task-list" aria-live="polite"></section>
+
+    <p class="empty" id="empty-state" hidden>暂无任务，先在上方添加一条吧。</p>
+
+    <footer class="app__footer">
+      <span id="data-mode">正在连接数据源…</span>
+      <span id="task-count"></span>
+    </footer>
+
+    <div class="toast" id="toast" hidden></div>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

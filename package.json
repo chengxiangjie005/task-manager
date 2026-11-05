@@ -1,0 +1,17 @@
+{
+  "name": "smart-task-manager",
+  "version": "1.0.0",
+  "description": "基于 Node.js + Supabase 的智能任务管理系统",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["task", "supabase", "nodejs"],
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
